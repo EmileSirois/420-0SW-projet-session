@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://bh702t20xxf7m"]
 
 [ext_resource type="Script" uid="uid://dvqr73lqdlnnm" path="res://scripts/world.gd" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://dnv44063vbv0l" path="res://scenes/player.tscn" id="2_rwgxs"]
 
 [node name="World" type="Node2D" unique_id=615479165]
 script = ExtResource("1_nnsk1")
+
+[node name="Player" parent="." unique_id=2007850341 instance=ExtResource("2_rwgxs")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2078656128]
+offset_left = 586.0
+offset_top = 313.0
+offset_right = 626.0
+offset_bottom = 353.0
