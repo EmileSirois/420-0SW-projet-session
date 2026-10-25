@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dd8s6gp88axx3"]
+
+[ext_resource type="Texture2D" uid="uid://bvg44b3yhbagv" path="res://assets/PNG/exterior.png" id="1_d7po0"]
+[ext_resource type="Texture2D" uid="uid://buxmldj3ygthp" path="res://assets/PNG/Smoke_animation.png" id="2_qtlar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk7hg"]
+atlas = ExtResource("2_qtlar")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se78b"]
+atlas = ExtResource("2_qtlar")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bgk5"]
+atlas = ExtResource("2_qtlar")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f74lx"]
+atlas = ExtResource("2_qtlar")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptc3g"]
+atlas = ExtResource("2_qtlar")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcu0q"]
+atlas = ExtResource("2_qtlar")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qtlar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk7hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se78b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bgk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f74lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptc3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcu0q")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="House" type="Node2D" unique_id=1921793912]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687884399]
+texture = ExtResource("1_d7po0")
+region_enabled = true
+region_rect = Rect2(0, 0, 145, 125)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840413602]
+position = Vector2(-33, -54)
+sprite_frames = SubResource("SpriteFrames_qtlar")
+autoplay = "default"
+frame_progress = 0.7515028
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1251888929]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=449674253]
+polygon = PackedVector2Array(-53, -16, -53, 62, 69, 62, 68, -14, 30, -27, -7, -61)
