@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0fxj5rqwevb4"]
 
-[ext_resource type="Script" uid="uid://btepsjnx7ikhr" path="res://scripts/arbre_1.gd" id="1_b2jax"]
+[ext_resource type="Script" uid="uid://btepsjnx7ikhr" path="res://scripts/tree_1.gd" id="1_b2jax"]
 [ext_resource type="Texture2D" uid="uid://dksg64cdqeer0" path="res://assets/EnvironmentPack/AnimatedTrees/AnimatedClassicalTrees/AnimatedTreeCoolColor.png" id="2_uk7mw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jg8oe"]

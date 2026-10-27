@@ -66,7 +66,7 @@ sprite_frames = SubResource("SpriteFrames_qtlar")
 autoplay = "default"
 frame_progress = 0.7515028
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1251888929]
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=713496490]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=449674253]
 polygon = PackedVector2Array(-53, -16, -53, 62, 69, 62, 68, -14, 30, -27, -7, -61)

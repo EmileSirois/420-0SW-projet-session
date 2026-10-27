@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxxkyvpsmp1pb"]
 
 [ext_resource type="Texture2D" uid="uid://b1p56l34egqpd" path="res://assets/EnvironmentPack/AnimatedTrees/AnimatedClassicalTrees/AnimatedTrees.png" id="1_iekdm"]
+[ext_resource type="Script" uid="uid://eoiwok8tbtu4" path="res://scripts/tree_2.gd" id="1_wmt7p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wmt7p"]
 atlas = ExtResource("1_iekdm")
@@ -126,10 +127,12 @@ animations = [{
 size = Vector2(11, 19)
 
 [node name="Tree2" type="Node2D" unique_id=1948282658]
+script = ExtResource("1_wmt7p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=390094473]
 sprite_frames = SubResource("SpriteFrames_mvo2r")
-frame_progress = 0.9684003
+autoplay = "default"
+frame_progress = 0.49661532
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=69625856]
 
