@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bgx8vlxh33l2s"]
+
+[ext_resource type="PackedScene" uid="uid://bh702t20xxf7m" path="res://scenes/world.tscn" id="1_qco2a"]
+[ext_resource type="PackedScene" uid="uid://dnv44063vbv0l" path="res://scenes/player.tscn" id="2_e1wa2"]
+
+[node name="game_loop" type="Node2D" unique_id=1177750953]
+
+[node name="SceneContaienr" type="Node2D" parent="." unique_id=1806473409]
+
+[node name="World" parent="SceneContaienr" unique_id=615479165 instance=ExtResource("1_qco2a")]
+
+[node name="Player" parent="." unique_id=2007850341 instance=ExtResource("2_e1wa2")]
+position = Vector2(408, 414)

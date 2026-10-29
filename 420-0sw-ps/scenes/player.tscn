@@ -1,10 +1,115 @@
 [gd_scene format=3 uid="uid://dnv44063vbv0l"]
 
-[ext_resource type="Texture2D" uid="uid://kd7diivpxilc" path="res://assets/godot.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dwthydgd3gbf4" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://d26jgfoncayhi" path="res://assets/player/Player_sprite_universal.png" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(18, 16)
+
+[sub_resource type="Animation" id="Animation_qhqgy"]
+resource_name = "DownWalk"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 10), Vector2i(2, 10), Vector2i(3, 10), Vector2i(4, 10), Vector2i(5, 10), Vector2i(6, 10), Vector2i(7, 10), Vector2i(8, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_dqkch"]
+resource_name = "LeftWalk"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [118, 119, 120, 121, 122, 123, 124, 125]
+}
+
+[sub_resource type="Animation" id="Animation_qlg0r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [117]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_g2els"]
+resource_name = "RightWalk"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 11), Vector2i(2, 11), Vector2i(3, 11), Vector2i(4, 11), Vector2i(5, 11), Vector2i(6, 11), Vector2i(7, 11), Vector2i(8, 11)]
+}
+
+[sub_resource type="Animation" id="Animation_tuyoq"]
+resource_name = "UpWalk"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 8), Vector2i(2, 8), Vector2i(3, 8), Vector2i(4, 8), Vector2i(5, 8), Vector2i(6, 8), Vector2i(7, 8), Vector2i(8, 8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjrip"]
+_data = {
+&"DownWalk": SubResource("Animation_qhqgy"),
+&"LeftWalk": SubResource("Animation_dqkch"),
+&"RESET": SubResource("Animation_qlg0r"),
+&"RightWalk": SubResource("Animation_g2els"),
+&"UpWalk": SubResource("Animation_tuyoq")
+}
 
 [node name="Player" type="CharacterBody2D" unique_id=2007850341]
 motion_mode = 1
@@ -15,8 +120,12 @@ shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1159674341]
 z_index = 1
-scale = Vector2(0.03, 0.03)
-texture = ExtResource("1_3vyb7")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_g2els")
+hframes = 13
+vframes = 21
+frame = 104
+region_rect = Rect2(-553.1941, 865.1814, 1801.416, 529.30493)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=425029659]
 zoom = Vector2(2.5, 2.5)
@@ -24,3 +133,6 @@ limit_left = -623
 limit_top = -640
 limit_right = 1776
 limit_bottom = 1056
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1864135453]
+libraries/ = SubResource("AnimationLibrary_fjrip")

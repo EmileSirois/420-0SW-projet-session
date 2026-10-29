@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="420-0SW-ps"
-run/main_scene="uid://bh702t20xxf7m"
+run/main_scene="uid://bgx8vlxh33l2s"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://kd7diivpxilc"
 
@@ -54,4 +54,5 @@ Interact={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
