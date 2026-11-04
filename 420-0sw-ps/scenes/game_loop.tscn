@@ -2,12 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://bh702t20xxf7m" path="res://scenes/world.tscn" id="1_qco2a"]
 [ext_resource type="PackedScene" uid="uid://dnv44063vbv0l" path="res://scenes/player.tscn" id="2_e1wa2"]
+[ext_resource type="Script" uid="uid://dux6fqj73h2ql" path="res://scripts/scene_manager.gd" id="3_43akg"]
+[ext_resource type="PackedScene" uid="uid://da2mcg46in7x4" path="res://scenes/house_interrior.tscn" id="4_g34oh"]
 
 [node name="game_loop" type="Node2D" unique_id=1177750953]
 
-[node name="SceneContaienr" type="Node2D" parent="." unique_id=1806473409]
-
-[node name="World" parent="SceneContaienr" unique_id=615479165 instance=ExtResource("1_qco2a")]
-
 [node name="Player" parent="." unique_id=2007850341 instance=ExtResource("2_e1wa2")]
+z_index = 1
 position = Vector2(408, 414)
+
+[node name="SceneContainer" type="Node2D" parent="." unique_id=1806473409]
+
+[node name="World" parent="SceneContainer" unique_id=615479165 instance=ExtResource("1_qco2a")]
+
+[node name="SceneManager" type="Node" parent="." unique_id=227607600]
+script = ExtResource("3_43akg")
+houseScene = ExtResource("4_g34oh")
+worldScene = ExtResource("1_qco2a")

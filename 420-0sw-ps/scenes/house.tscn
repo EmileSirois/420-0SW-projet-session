@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dd8s6gp88axx3"]
 
 [ext_resource type="Texture2D" uid="uid://bvg44b3yhbagv" path="res://assets/PNG/exterior.png" id="1_d7po0"]
+[ext_resource type="Script" uid="uid://bag3sp654t5v2" path="res://scripts/house.gd" id="1_rk7hg"]
 [ext_resource type="Texture2D" uid="uid://buxmldj3ygthp" path="res://assets/PNG/Smoke_animation.png" id="2_qtlar"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rk7hg"]
@@ -53,7 +54,11 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xc1ax"]
+radius = 25.019993
+
 [node name="House" type="Node2D" unique_id=1921793912]
+script = ExtResource("1_rk7hg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687884399]
 texture = ExtResource("1_d7po0")
@@ -70,3 +75,13 @@ frame_progress = 0.7515028
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=449674253]
 polygon = PackedVector2Array(-53, -16, -53, 62, 69, 62, 68, -14, 30, -27, -7, -61)
+
+[node name="InterractionShape" type="Area2D" parent="." unique_id=1198320643]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterractionShape" unique_id=719121891]
+position = Vector2(39, 61)
+shape = SubResource("CircleShape2D_xc1ax")
+
+[connection signal="body_entered" from="InterractionShape" to="." method="_on_interraction_shape_body_entered"]
+[connection signal="body_exited" from="InterractionShape" to="." method="_on_interraction_shape_body_exited"]
