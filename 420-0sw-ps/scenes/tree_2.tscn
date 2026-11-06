@@ -126,6 +126,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfbrw"]
 size = Vector2(11, 19)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmt7p"]
+radius = 25.0
+
 [node name="Tree2" type="Node2D" unique_id=1948282658]
 script = ExtResource("1_wmt7p")
 
@@ -139,3 +142,12 @@ frame_progress = 0.49661532
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=208242760]
 position = Vector2(0.5, 20.5)
 shape = SubResource("RectangleShape2D_rfbrw")
+
+[node name="InterractionShape" type="Area2D" parent="." unique_id=1770406666]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterractionShape" unique_id=1823785711]
+position = Vector2(0, 21)
+shape = SubResource("CircleShape2D_wmt7p")
+
+[connection signal="body_entered" from="InterractionShape" to="." method="_on_interraction_shape_body_entered"]
+[connection signal="body_exited" from="InterractionShape" to="." method="_on_interraction_shape_body_exited"]
