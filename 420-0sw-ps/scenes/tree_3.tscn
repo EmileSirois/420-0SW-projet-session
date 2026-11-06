@@ -2,6 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://b1p56l34egqpd" path="res://assets/EnvironmentPack/AnimatedTrees/AnimatedClassicalTrees/AnimatedTrees.png" id="1_57mgp"]
 [ext_resource type="Script" uid="uid://b2vscbqh4y5k4" path="res://scripts/tree_3.gd" id="1_t3ebc"]
+[ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_27jge"]
+[ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="3_tmiux"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0b1i4"]
+shader = ExtResource("2_27jge")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/active = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3ebc"]
 atlas = ExtResource("1_57mgp")
@@ -126,13 +134,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_035b0"]
 size = Vector2(11, 19)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t3ebc"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_27jge"]
 radius = 25.0
 
 [node name="Tree3" type="Node2D" unique_id=947793273]
 script = ExtResource("1_t3ebc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1633257370]
+material = SubResource("ShaderMaterial_0b1i4")
 sprite_frames = SubResource("SpriteFrames_6kxon")
 autoplay = "default"
 
@@ -142,11 +151,9 @@ autoplay = "default"
 position = Vector2(0.5, 20.5)
 shape = SubResource("RectangleShape2D_035b0")
 
-[node name="InterractionShape" type="Area2D" parent="." unique_id=376150753]
+[node name="Interactable" parent="." unique_id=165595025 node_paths=PackedStringArray("visual") instance=ExtResource("3_tmiux")]
+visual = NodePath("../AnimatedSprite2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InterractionShape" unique_id=618470033]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1370114853]
 position = Vector2(0, 21)
-shape = SubResource("CircleShape2D_t3ebc")
-
-[connection signal="body_entered" from="InterractionShape" to="." method="_on_interraction_shape_body_entered"]
-[connection signal="body_exited" from="InterractionShape" to="." method="_on_interraction_shape_body_exited"]
+shape = SubResource("CircleShape2D_27jge")

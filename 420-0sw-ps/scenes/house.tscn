@@ -2,7 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bvg44b3yhbagv" path="res://assets/PNG/exterior.png" id="1_d7po0"]
 [ext_resource type="Script" uid="uid://bag3sp654t5v2" path="res://scripts/house.gd" id="1_rk7hg"]
+[ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_3bgk5"]
 [ext_resource type="Texture2D" uid="uid://buxmldj3ygthp" path="res://assets/PNG/Smoke_animation.png" id="2_qtlar"]
+[ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="4_se78b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_se78b"]
+shader = ExtResource("2_3bgk5")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/active = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rk7hg"]
 atlas = ExtResource("2_qtlar")
@@ -54,14 +62,14 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xc1ax"]
-radius = 25.019993
+[sub_resource type="CircleShape2D" id="CircleShape2D_3bgk5"]
+radius = 25.0
 
 [node name="House" type="Node2D" unique_id=1921793912]
 script = ExtResource("1_rk7hg")
-spawnLocation = Vector2(410, 410)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687884399]
+material = SubResource("ShaderMaterial_se78b")
 texture = ExtResource("1_d7po0")
 region_enabled = true
 region_rect = Rect2(0, 0, 145, 125)
@@ -77,12 +85,9 @@ frame_progress = 0.7515028
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=449674253]
 polygon = PackedVector2Array(-53, -16, -53, 62, 69, 62, 68, -14, 30, -27, -7, -61)
 
-[node name="InterractionShape" type="Area2D" parent="." unique_id=1198320643]
-unique_name_in_owner = true
+[node name="Interactable" parent="." unique_id=165595025 node_paths=PackedStringArray("visual") instance=ExtResource("4_se78b")]
+visual = NodePath("../Sprite2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InterractionShape" unique_id=719121891]
-position = Vector2(39, 61)
-shape = SubResource("CircleShape2D_xc1ax")
-
-[connection signal="body_entered" from="InterractionShape" to="." method="_on_interraction_shape_body_entered"]
-[connection signal="body_exited" from="InterractionShape" to="." method="_on_interraction_shape_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1459743000]
+position = Vector2(40, 62)
+shape = SubResource("CircleShape2D_3bgk5")

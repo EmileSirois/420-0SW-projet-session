@@ -2,7 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bs40phe2ovqdt" path="res://scripts/house_interrior.gd" id="1_b0dfw"]
 [ext_resource type="Texture2D" uid="uid://b5dj7x85qyac8" path="res://assets/PNG/Interior.png" id="1_t23dk"]
+[ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_040vw"]
 [ext_resource type="Texture2D" uid="uid://be08nror5251r" path="res://assets/PNG/walls_floor.png" id="2_qluia"]
+[ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="4_b0dfw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0dfw"]
+shader = ExtResource("2_040vw")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/active = false
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b0dfw"]
 texture = ExtResource("1_t23dk")
@@ -468,12 +476,20 @@ size = Vector2(7, 158)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xc1ax"]
 size = Vector2(188, 45)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qluia"]
-radius = 25.019993
+[sub_resource type="CircleShape2D" id="CircleShape2D_040vw"]
+radius = 25.0
 
 [node name="house_interrior" type="Node2D" unique_id=1719051664]
 script = ExtResource("1_b0dfw")
-spawnLocation = Vector2(160, 100)
+spawnLocation = Vector2(160, 110)
+
+[node name="Door" type="Sprite2D" parent="." unique_id=2044262510]
+z_index = 3
+material = SubResource("ShaderMaterial_b0dfw")
+position = Vector2(159, 128)
+texture = ExtResource("2_qluia")
+region_enabled = true
+region_rect = Rect2(115, 96, 26, 32)
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=1398406260]
 z_index = -1
@@ -487,7 +503,7 @@ tile_set = SubResource("TileSet_mvo2r")
 
 [node name="WallsLayer" type="TileMapLayer" parent="." unique_id=2011870866]
 z_index = 2
-tile_map_data = PackedByteArray("AAABAAcAAQADAAQAAAABAAgAAQADAAUAAAACAAcAAQABAAYAAAACAAgAAQABAAcAAAADAAcAAQABAAYAAAADAAgAAQABAAcAAAAEAAcAAQABAAYAAAAEAAgAAQABAAcAAAAFAAcAAQABAAYAAAAFAAgAAQABAAcAAAAGAAcAAQABAAYAAAAGAAgAAQABAAcAAAAHAAcAAQABAAYAAAAHAAgAAQABAAcAAAAIAAcAAQABAAYAAAAIAAgAAQABAAcAAAAJAAcAAQAHAAYAAAAJAAgAAQAHAAcAAAAKAAcAAQAIAAYAAAAKAAgAAQAIAAcAAAABAAYAAQADAAMAAAACAAYAAQABAAAAAAADAAYAAQABAAAAAAAEAAYAAQABAAAAAAAFAAYAAQABAAAAAAAGAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQABAAAAAAAJAAYAAQABAAAAAAAKAAYAAQABAAAAAAABAAUAAQACAAEAAAABAAQAAQACAAEAAAABAAMAAQACAAEAAAABAAIAAQACAAEAAAABAAEAAQADAAIAAAABAAAAAQADAAEAAAABAP//AQADAAAAAAACAP//AQABAAIAAAACAAAAAQABAAMAAAACAAEAAQABAAQAAAADAP//AQABAAIAAAADAAAAAQABAAMAAAADAAEAAQABAAQAAAAEAP//AQABAAIAAAAEAAAAAQABAAMAAAAEAAEAAQABAAQAAAAFAP//AQABAAIAAAAFAAAAAQABAAMAAAAFAAEAAQABAAQAAAAGAP//AQABAAIAAAAGAAAAAQABAAMAAAAGAAEAAQABAAQAAAAHAP//AQABAAIAAAAHAAAAAQABAAMAAAAHAAEAAQABAAQAAAAIAP//AQABAAIAAAAIAAAAAQABAAMAAAAIAAEAAQABAAQAAAAJAP//AQABAAIAAAAJAAAAAQABAAMAAAAJAAEAAQABAAQAAAAKAP//AQABAAIAAAAKAAAAAQABAAMAAAAKAAEAAQABAAQAAAALAAcAAQABAAYAAAALAAgAAQABAAcAAAAMAAcAAQAEAAQAAAAMAAgAAQAEAAUAAAAMAAYAAQAEAAMAAAALAAYAAQABAAAAAAAMAAUAAQAAAAEAAAAMAAQAAQAAAAEAAAAMAAMAAQAAAAEAAAAMAAIAAQAAAAEAAAAMAAEAAQAEAAIAAAAMAP//AQAEAAAAAAAMAAAAAQAEAAEAAAALAP//AQABAAIAAAALAAAAAQABAAMAAAALAAEAAQABAAQAAAA=")
+tile_map_data = PackedByteArray("AAABAAcAAQADAAQAAAABAAgAAQADAAUAAAACAAcAAQABAAYAAAACAAgAAQABAAcAAAADAAcAAQABAAYAAAADAAgAAQABAAcAAAAEAAcAAQABAAYAAAAEAAgAAQABAAcAAAAFAAcAAQABAAYAAAAFAAgAAQABAAcAAAAGAAcAAQABAAYAAAAGAAgAAQABAAcAAAAHAAcAAQABAAYAAAAHAAgAAQABAAcAAAAIAAcAAQABAAYAAAAIAAgAAQABAAcAAAAJAAcAAQABAAYAAAAJAAgAAQABAAcAAAAKAAcAAQABAAYAAAAKAAgAAQABAAcAAAABAAYAAQADAAMAAAACAAYAAQABAAAAAAADAAYAAQABAAAAAAAEAAYAAQABAAAAAAAFAAYAAQABAAAAAAAGAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQABAAAAAAAJAAYAAQABAAAAAAAKAAYAAQABAAAAAAABAAUAAQACAAEAAAABAAQAAQACAAEAAAABAAMAAQACAAEAAAABAAIAAQACAAEAAAABAAEAAQADAAIAAAABAAAAAQADAAEAAAABAP//AQADAAAAAAACAP//AQABAAIAAAACAAAAAQABAAMAAAACAAEAAQABAAQAAAADAP//AQABAAIAAAADAAAAAQABAAMAAAADAAEAAQABAAQAAAAEAP//AQABAAIAAAAEAAAAAQABAAMAAAAEAAEAAQABAAQAAAAFAP//AQABAAIAAAAFAAAAAQABAAMAAAAFAAEAAQABAAQAAAAGAP//AQABAAIAAAAGAAAAAQABAAMAAAAGAAEAAQABAAQAAAAHAP//AQABAAIAAAAHAAAAAQABAAMAAAAHAAEAAQABAAQAAAAIAP//AQABAAIAAAAIAAAAAQABAAMAAAAIAAEAAQABAAQAAAAJAP//AQABAAIAAAAJAAAAAQABAAMAAAAJAAEAAQABAAQAAAAKAP//AQABAAIAAAAKAAAAAQABAAMAAAAKAAEAAQABAAQAAAALAAcAAQABAAYAAAALAAgAAQABAAcAAAAMAAcAAQAEAAQAAAAMAAgAAQAEAAUAAAAMAAYAAQAEAAMAAAALAAYAAQABAAAAAAAMAAUAAQAAAAEAAAAMAAQAAQAAAAEAAAAMAAMAAQAAAAEAAAAMAAIAAQAAAAEAAAAMAAEAAQAEAAIAAAAMAP//AQAEAAAAAAAMAAAAAQAEAAEAAAALAP//AQABAAIAAAALAAAAAQABAAMAAAALAAEAAQABAAQAAAA=")
 tile_set = SubResource("TileSet_mvo2r")
 
 [node name="DetailLayer" type="TileMapLayer" parent="." unique_id=377441373]
@@ -496,6 +512,7 @@ tile_map_data = PackedByteArray("AAAGAAcAAQAFAAQAAAAGAAgAAQAFAAUAAAAHAAcAAQAGAAQ
 tile_set = SubResource("TileSet_mvo2r")
 
 [node name="HouseBound" type="StaticBody2D" parent="." unique_id=819735359]
+visible = false
 
 [node name="LeftBound" type="CollisionShape2D" parent="HouseBound" unique_id=224301025]
 position = Vector2(14.5, 62)
@@ -513,12 +530,9 @@ shape = SubResource("RectangleShape2D_xc1ax")
 position = Vector2(112, 133)
 shape = SubResource("RectangleShape2D_xc1ax")
 
-[node name="InterractionShape" type="Area2D" parent="." unique_id=738361141]
-unique_name_in_owner = true
+[node name="Interactable" parent="." unique_id=165595025 node_paths=PackedStringArray("visual") instance=ExtResource("4_b0dfw")]
+visual = NodePath("../Door")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InterractionShape" unique_id=1425044733]
-position = Vector2(159, 115)
-shape = SubResource("CircleShape2D_qluia")
-
-[connection signal="body_entered" from="InterractionShape" to="." method="_on_interraction_shape_body_entered"]
-[connection signal="body_exited" from="InterractionShape" to="." method="_on_interraction_shape_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1117369911]
+position = Vector2(158, 116)
+shape = SubResource("CircleShape2D_040vw")

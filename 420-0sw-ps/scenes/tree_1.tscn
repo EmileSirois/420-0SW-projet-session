@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://d0fxj5rqwevb4"]
 
 [ext_resource type="Script" uid="uid://btepsjnx7ikhr" path="res://scripts/tree_1.gd" id="1_b2jax"]
+[ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_pe641"]
 [ext_resource type="Texture2D" uid="uid://dksg64cdqeer0" path="res://assets/EnvironmentPack/AnimatedTrees/AnimatedClassicalTrees/AnimatedTreeCoolColor.png" id="2_uk7mw"]
+[ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="3_uk7mw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uk7mw"]
+shader = ExtResource("2_pe641")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/active = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jg8oe"]
 atlas = ExtResource("2_uk7mw")
@@ -126,13 +134,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmc4h"]
 size = Vector2(11, 19)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b2jax"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uk7mw"]
 radius = 25.0
 
 [node name="Tree1" type="Node2D" unique_id=300792247]
 script = ExtResource("1_b2jax")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1238131118]
+material = SubResource("ShaderMaterial_uk7mw")
 sprite_frames = SubResource("SpriteFrames_u3q50")
 autoplay = "default"
 frame_progress = 0.015536105
@@ -143,11 +152,9 @@ frame_progress = 0.015536105
 position = Vector2(0.5, 20.5)
 shape = SubResource("RectangleShape2D_cmc4h")
 
-[node name="InterractionShape" type="Area2D" parent="." unique_id=2028972785]
+[node name="Interactable" parent="." unique_id=165595025 node_paths=PackedStringArray("visual") instance=ExtResource("3_uk7mw")]
+visual = NodePath("../AnimatedSprite2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InterractionShape" unique_id=2021101378]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1135677684]
 position = Vector2(0, 21)
-shape = SubResource("CircleShape2D_b2jax")
-
-[connection signal="body_entered" from="InterractionShape" to="." method="_on_interraction_shape_body_entered"]
-[connection signal="body_exited" from="InterractionShape" to="." method="_on_interraction_shape_body_exited"]
+shape = SubResource("CircleShape2D_uk7mw")
