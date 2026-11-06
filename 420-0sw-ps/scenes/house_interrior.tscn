@@ -468,8 +468,12 @@ size = Vector2(7, 158)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xc1ax"]
 size = Vector2(188, 45)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qluia"]
+radius = 25.019993
+
 [node name="house_interrior" type="Node2D" unique_id=1719051664]
 script = ExtResource("1_b0dfw")
+spawnLocation = Vector2(160, 100)
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=1398406260]
 z_index = -1
@@ -508,3 +512,13 @@ shape = SubResource("RectangleShape2D_xc1ax")
 [node name="BottomBound" type="CollisionShape2D" parent="HouseBound" unique_id=1129527429]
 position = Vector2(112, 133)
 shape = SubResource("RectangleShape2D_xc1ax")
+
+[node name="InterractionShape" type="Area2D" parent="." unique_id=738361141]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterractionShape" unique_id=1425044733]
+position = Vector2(159, 115)
+shape = SubResource("CircleShape2D_qluia")
+
+[connection signal="body_entered" from="InterractionShape" to="." method="_on_interraction_shape_body_entered"]
+[connection signal="body_exited" from="InterractionShape" to="." method="_on_interraction_shape_body_exited"]

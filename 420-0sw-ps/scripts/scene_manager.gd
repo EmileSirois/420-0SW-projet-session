@@ -12,14 +12,13 @@ func _ready() -> void:
 	
 	currentScene = worldScene
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_scene_switch():
 	currentScene = sceneContainer.get_child(0)
-	sceneContainer.queue_free()
+	sceneContainer.remove_child(currentScene)
 	
 	if(currentScene is World):
 		currentScene = houseScene
@@ -28,7 +27,6 @@ func _on_scene_switch():
 	
 	var current = currentScene.instantiate()
 	var spawn : Vector2 = current.spawnLocation
-	
 	player.position = spawn
 	
 	sceneContainer.add_child(current)

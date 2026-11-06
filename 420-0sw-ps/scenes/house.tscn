@@ -59,6 +59,7 @@ radius = 25.019993
 
 [node name="House" type="Node2D" unique_id=1921793912]
 script = ExtResource("1_rk7hg")
+spawnLocation = Vector2(410, 410)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687884399]
 texture = ExtResource("1_d7po0")

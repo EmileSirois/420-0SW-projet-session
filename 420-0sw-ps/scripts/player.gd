@@ -28,7 +28,7 @@ func get_facing(dir: Vector2) -> String:
 		return "Down" if dir.y > 0 else "Up"
 
 func _input(event):
-	var pressed : Vector2
+	#var pressed : Vector2
 	
 	if event.is_action_pressed("Left"):
 		last_pressed = Vector2.LEFT

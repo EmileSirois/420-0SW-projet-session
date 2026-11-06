@@ -2659,6 +2659,7 @@ size = Vector2(2402, 2)
 
 [node name="World" type="Node2D" unique_id=615479165]
 script = ExtResource("1_nnsk1")
+spawnLocation = Vector2(410, 410)
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=196652886]
 z_index = -1
