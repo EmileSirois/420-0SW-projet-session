@@ -12,39 +12,33 @@ shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/width = 1.0
 shader_parameter/active = false
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rk7hg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bgk5"]
 atlas = ExtResource("2_qtlar")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_se78b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f74lx"]
 atlas = ExtResource("2_qtlar")
 region = Rect2(48, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bgk5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptc3g"]
 atlas = ExtResource("2_qtlar")
 region = Rect2(96, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f74lx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcu0q"]
 atlas = ExtResource("2_qtlar")
 region = Rect2(144, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ptc3g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwc8c"]
 atlas = ExtResource("2_qtlar")
 region = Rect2(192, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wcu0q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhx8p"]
 atlas = ExtResource("2_qtlar")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtlar"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rk7hg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_se78b")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3bgk5")
 }, {
@@ -56,6 +50,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wcu0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwc8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhx8p")
 }],
 "loop": 1,
 "name": &"default",
@@ -89,5 +89,5 @@ polygon = PackedVector2Array(-53, -16, -53, 62, 69, 62, 68, -14, 30, -27, -7, -6
 visual = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1459743000]
-position = Vector2(40, 62)
+position = Vector2(39, 49)
 shape = SubResource("CircleShape2D_3bgk5")
