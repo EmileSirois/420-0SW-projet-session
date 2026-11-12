@@ -1,6 +1,7 @@
 extends Node
 
-@onready var inventory : Array
+var inventory := Inventory.new()
+var insects : Array[Insect] = []
 
 # TODO :
 	# Selectionner aléatoirement des arbres qui seront availlable pour la capture
@@ -10,14 +11,27 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Events.capture_complete.connect(capture_complete)
+	fetch_insects()
 
+func fetch_insects():
+	var dir := DirAccess.open("res://ressources/insects/")
+	if dir == null:
+		print("Dossier insectes introuvable")
+		return
+	
+	for file in dir.get_files():
+		file = file.trim_suffix(".remap")
+		var res := load("res://ressources/insects/".path_join(file))
+		insects.append(res)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func rand_insect() -> int:
+	return randf_range(0, insects.size() - 1)
 
 func capture_complete():
 	print("Capture complete")
-	inventory.push_front("Insecte")
-	print(inventory)
+	var i = rand_insect()
+	inventory.add_item(insects[i], 1)
+	
+	#inventory.add_item()
+	print(inventory.items)
 	

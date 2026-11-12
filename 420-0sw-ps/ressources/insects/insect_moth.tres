@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://brdncgx82nt4i" path="res://assets/items/Item_Sheet_Flora&Fauna_0.png" id="1_uis8g"]
 [ext_resource type="Script" uid="uid://csuw13sdftsw4" path="res://scripts/insects/insect_moth.gd" id="2_dke4o"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0suxf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r4gi"]
 atlas = ExtResource("1_uis8g")
 region = Rect2(64, 96, 32, 32)
 
@@ -11,4 +11,5 @@ region = Rect2(64, 96, 32, 32)
 script = ExtResource("2_dke4o")
 id = &"1"
 display_name = "Moth"
-icon = SubResource("AtlasTexture_0suxf")
+icon = SubResource("AtlasTexture_7r4gi")
+max_stack = 10

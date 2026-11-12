@@ -18,6 +18,7 @@ config/icon="uid://kd7diivpxilc"
 [autoload]
 
 Events="*uid://j6j3jkr8y1im"
+CaptureManager="*uid://c11a2p0b40lm1"
 
 [display]
 
