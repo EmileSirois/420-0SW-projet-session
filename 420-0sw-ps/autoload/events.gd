@@ -8,3 +8,6 @@ signal capture_start
 
 @warning_ignore("unused_signal")
 signal capture_complete
+
+@warning_ignore("unused_signal")
+signal inventory_altered(i :Insect, c :int)

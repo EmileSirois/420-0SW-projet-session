@@ -1,52 +1,14 @@
 [gd_scene format=3 uid="uid://ue8xq5iegs3p"]
 
 [ext_resource type="Script" uid="uid://dymoirt6gm44a" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="PackedScene" uid="uid://xnyxwg5htbr" path="res://scenes/capture_menu.tscn" id="2_oo0fn"]
+[ext_resource type="PackedScene" uid="uid://8lhm28qkvluu" path="res://scenes/book.tscn" id="3_5ysmq"]
 
 [node name="HUD" type="CanvasLayer" unique_id=650408484]
 process_mode = 3
 script = ExtResource("1_ahhtf")
 
-[node name="CaptureMenu" type="Control" parent="." unique_id=814848975]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CaptureMenu" parent="." unique_id=1317100565 instance=ExtResource("2_oo0fn")]
 
-[node name="Dim" type="ColorRect" parent="CaptureMenu" unique_id=1277427518]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.5372549, 0.5372549, 0.5372549, 0.52156866)
-
-[node name="CenterContainer" type="CenterContainer" parent="CaptureMenu" unique_id=1723381431]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CaptureMenu/CenterContainer" unique_id=1858024218]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CaptureMenu/CenterContainer/VBoxContainer" unique_id=1141766905]
-layout_mode = 2
-text = "Capture Minigame"
-
-[node name="CapBtn" type="Button" parent="CaptureMenu/CenterContainer/VBoxContainer" unique_id=1498978336]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Capture"
-
-[connection signal="pressed" from="CaptureMenu/CenterContainer/VBoxContainer/CapBtn" to="." method="_on_cap_btn_pressed"]
+[node name="Book" parent="." unique_id=324251153 instance=ExtResource("3_5ysmq")]
+visible = false

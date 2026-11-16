@@ -12,3 +12,4 @@ func add_item(item: Insect, amount: int = 1):
 		return
 	
 	items.push_front(item)
+	Events.inventory_altered.emit(item, amount)

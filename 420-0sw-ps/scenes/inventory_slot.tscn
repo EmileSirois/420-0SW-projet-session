@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cijhrnympruoy"]
+
+[ext_resource type="Texture2D" uid="uid://bwl655yum0tnn" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01a.png" id="1_c13kb"]
+[ext_resource type="Texture2D" uid="uid://yktyl2hx1dyn" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01b.png" id="2_s2hqy"]
+[ext_resource type="Texture2D" uid="uid://emijuw5hu578" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_Slot01a.png" id="3_t1mo2"]
+[ext_resource type="Texture2D" uid="uid://b52oojr2dhtr3" path="res://assets/01_TravelBookLite/Sprites Animated/UI_TravelBook_Marker01aShow_4.png" id="4_st3ap"]
+[ext_resource type="Texture2D" uid="uid://0cliwt6o22wx" path="res://assets/01_TravelBookLite/Sprites Animated/UI_TravelBook_Marker01aShow_2.png" id="5_6eu8d"]
+[ext_resource type="Script" uid="uid://cx4cwlkx0hrx8" path="res://scripts/inventory_slot.gd" id="6_s2hqy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6hdt"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+texture = ExtResource("1_c13kb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmi4j"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 3.0
+texture = ExtResource("1_c13kb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5pf3"]
+texture = ExtResource("2_s2hqy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ordt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nn13w"]
+texture = ExtResource("3_t1mo2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4embb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ble1a"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+texture = ExtResource("4_st3ap")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wpgy"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+texture = ExtResource("4_st3ap")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4vsvs"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+texture = ExtResource("5_6eu8d")
+
+[sub_resource type="Theme" id="Theme_68j0h"]
+Button/styles/hover = SubResource("StyleBoxTexture_d6hdt")
+Button/styles/normal = SubResource("StyleBoxTexture_tmi4j")
+Button/styles/pressed = SubResource("StyleBoxTexture_e5pf3")
+Panel/styles/panel = SubResource("StyleBoxTexture_8ordt")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_nn13w")
+TabContainer/colors/font_hovered_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_unselected_color = Color(0, 0, 0, 0)
+TabContainer/styles/panel = SubResource("StyleBoxTexture_4embb")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_ble1a")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_3wpgy")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_4vsvs")
+
+[node name="InventorySlot" type="PanelContainer" unique_id=1921058801]
+theme = SubResource("Theme_68j0h")
+script = ExtResource("6_s2hqy")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=374365830]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Icon" type="TextureRect" parent="MarginContainer" unique_id=700603864]
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+
+[node name="Count" type="Label" parent="MarginContainer" unique_id=336242960]
+z_index = 2
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 5

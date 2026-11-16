@@ -24,14 +24,9 @@ func fetch_insects():
 		var res := load("res://ressources/insects/".path_join(file))
 		insects.append(res)
 
-func rand_insect() -> int:
-	return randf_range(0, insects.size() - 1)
-
 func capture_complete():
-	print("Capture complete")
-	var i = rand_insect()
-	inventory.add_item(insects[i], 1)
+	inventory.add_item(insects.pick_random(), 1)
 	
-	#inventory.add_item()
-	print(inventory.items)
+	var item = inventory.items[0]
+	print(item.display_name)
 	
