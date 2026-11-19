@@ -34,6 +34,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_01hes")
 
+[node name="Dim" type="ColorRect" parent="." unique_id=1242748156]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5372549, 0.5372549, 0.5372549, 0.52156866)
+
 [node name="Cover" type="PanelContainer" parent="." unique_id=315911817]
 z_index = 1
 custom_minimum_size = Vector2(672, 480)
@@ -54,32 +63,32 @@ theme_override_constants/margin_top = -10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 16
 
-[node name="TabContainer" type="TabContainer" parent="Cover/MarginContainer" unique_id=822034573]
+[node name="Pages" type="TabContainer" parent="Cover/MarginContainer" unique_id=822034573]
 layout_mode = 2
 current_tab = 0
 
-[node name="Inventaire" type="HBoxContainer" parent="Cover/MarginContainer/TabContainer" unique_id=123656268]
+[node name="Inventaire" type="HBoxContainer" parent="Cover/MarginContainer/Pages" unique_id=123656268]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="Cover/MarginContainer/TabContainer/Inventaire" unique_id=1140062311]
+[node name="InventoryLeftPage" type="PanelContainer" parent="Cover/MarginContainer/Pages/Inventaire" unique_id=1140062311]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_01hes")
 
-[node name="MarginContainer" type="MarginContainer" parent="Cover/MarginContainer/TabContainer/Inventaire/PanelContainer" unique_id=2070524822]
+[node name="MarginContainer" type="MarginContainer" parent="Cover/MarginContainer/Pages/Inventaire/InventoryLeftPage" unique_id=2070524822]
 layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 40
 
-[node name="PanelContainer" type="PanelContainer" parent="Cover/MarginContainer/TabContainer/Inventaire/PanelContainer/MarginContainer" unique_id=1526656062]
+[node name="InventoryContainer" type="PanelContainer" parent="Cover/MarginContainer/Pages/Inventaire/InventoryLeftPage/MarginContainer" unique_id=1526656062]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ih1ba")
 
-[node name="InventoryGrid" type="GridContainer" parent="Cover/MarginContainer/TabContainer/Inventaire/PanelContainer/MarginContainer/PanelContainer" unique_id=1419146656]
+[node name="InventoryGrid" type="GridContainer" parent="Cover/MarginContainer/Pages/Inventaire/InventoryLeftPage/MarginContainer/InventoryContainer" unique_id=1419146656]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -89,31 +98,22 @@ theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 6
 columns = 5
 
-[node name="PanelContainer2" type="PanelContainer" parent="Cover/MarginContainer/TabContainer/Inventaire" unique_id=1133677961]
+[node name="InventoryRightPage" type="PanelContainer" parent="Cover/MarginContainer/Pages/Inventaire" unique_id=1133677961]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_dm1x1")
 
-[node name="Almanac" type="HBoxContainer" parent="Cover/MarginContainer/TabContainer" unique_id=848201502]
+[node name="Almanac" type="HBoxContainer" parent="Cover/MarginContainer/Pages" unique_id=848201502]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="Cover/MarginContainer/TabContainer/Almanac" unique_id=719783768]
+[node name="AlmanacLeftPage" type="PanelContainer" parent="Cover/MarginContainer/Pages/Almanac" unique_id=719783768]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_01hes")
 
-[node name="PanelContainer2" type="PanelContainer" parent="Cover/MarginContainer/TabContainer/Almanac" unique_id=1553715510]
+[node name="AlmanacRightPAge" type="PanelContainer" parent="Cover/MarginContainer/Pages/Almanac" unique_id=1553715510]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_dm1x1")
-
-[node name="Dim" type="ColorRect" parent="." unique_id=1242748156]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.5372549, 0.5372549, 0.5372549, 0.52156866)

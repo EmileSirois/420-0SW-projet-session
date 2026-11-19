@@ -10,4 +10,10 @@ signal capture_start
 signal capture_complete
 
 @warning_ignore("unused_signal")
-signal inventory_altered(i :Insect, c :int)
+signal inventory_altered
+
+@warning_ignore("unused_signal")
+signal alert_requested(text: String)
+
+@warning_ignore("unused_signal")
+signal catalog_insects

@@ -3,12 +3,49 @@
 [ext_resource type="Script" uid="uid://dymoirt6gm44a" path="res://scripts/hud.gd" id="1_ahhtf"]
 [ext_resource type="PackedScene" uid="uid://xnyxwg5htbr" path="res://scenes/capture_menu.tscn" id="2_oo0fn"]
 [ext_resource type="PackedScene" uid="uid://8lhm28qkvluu" path="res://scenes/book.tscn" id="3_5ysmq"]
+[ext_resource type="Script" uid="uid://c60mq20mp4bdm" path="res://scripts/alert.gd" id="4_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://omw42xsjfxwb" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_Alert01a.png" id="5_047uy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysmq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="HUD" type="CanvasLayer" unique_id=650408484]
 process_mode = 3
 script = ExtResource("1_ahhtf")
 
 [node name="CaptureMenu" parent="." unique_id=1317100565 instance=ExtResource("2_oo0fn")]
+visible = false
 
 [node name="Book" parent="." unique_id=324251153 instance=ExtResource("3_5ysmq")]
 visible = false
+
+[node name="Warnings" type="Control" parent="." unique_id=796955419]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Alert" type="PanelContainer" parent="Warnings" unique_id=379386074]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -21.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ysmq")
+script = ExtResource("4_6fi6k")
+
+[node name="MarginContainer" type="MarginContainer" parent="Warnings/Alert" unique_id=2127992722]
+layout_mode = 2
+theme_override_constants/margin_left = -10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = -10
+
+[node name="Icon" type="TextureRect" parent="Warnings/Alert/MarginContainer" unique_id=1203799717]
+layout_mode = 2
+texture = ExtResource("5_047uy")

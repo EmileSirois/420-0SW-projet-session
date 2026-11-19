@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_040vw"]
 [ext_resource type="Texture2D" uid="uid://be08nror5251r" path="res://assets/PNG/walls_floor.png" id="2_qluia"]
 [ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="4_b0dfw"]
+[ext_resource type="PackedScene" uid="uid://hesjv01ihk5y" path="res://scenes/table.tscn" id="5_gn2dq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b0dfw"]
 shader = ExtResource("2_040vw")
@@ -56,7 +57,9 @@ texture = ExtResource("1_t23dk")
 4:2/0 = 0
 4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, -8, -8, -8, -8, 0, -8, 0, -4)
 5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 8, -4, 0, 4, 0, 8, -4, 8, 8)
 6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, -4, -4, -4, 0, 0, 0, 4, 0, 4, 8, -8, 8)
 7:2/0 = 0
 7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 0, 0, 0, 8, 0, 8, 8, -4, 8)
 8:2/0 = 0
@@ -67,7 +70,9 @@ texture = ExtResource("1_t23dk")
 3:3/0 = 0
 4:3/0 = 0
 5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, -4, 8, 8, 8, 8, -8)
 6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 4, -8, 4, 8, -8, 8)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, -4, 8, 8, 8, 8, -8)
 8:3/0 = 0
@@ -80,7 +85,9 @@ texture = ExtResource("1_t23dk")
 3:4/0 = 0
 4:4/0 = 0
 5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, -4, -4, 8, -4, 8, -8)
 6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, -8, 4, -4, -8, -4, -8, -8)
 7:4/0 = 0
 7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, -4, 0, 8, 0, 8, -8)
 8:4/0 = 0
@@ -462,6 +469,10 @@ texture = ExtResource("2_qluia")
 8:10/0/terrains_peering_bit/left_side = 0
 8:10/0/terrains_peering_bit/top_side = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_040vw"]
+resource_name = "Table"
+scenes/2/scene = ExtResource("5_gn2dq")
+
 [sub_resource type="TileSet" id="TileSet_mvo2r"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 2
@@ -469,6 +480,7 @@ terrain_set_0/terrain_0/name = "Floor "
 terrain_set_0/terrain_0/color = Color(0.23494336, 0.18399802, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_b0dfw")
 sources/1 = SubResource("TileSetAtlasSource_040vw")
+sources/2 = SubResource("TileSetScenesCollectionSource_040vw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvo2r"]
 size = Vector2(7, 158)
@@ -508,7 +520,7 @@ tile_set = SubResource("TileSet_mvo2r")
 
 [node name="DetailLayer" type="TileMapLayer" parent="." unique_id=377441373]
 z_index = 2
-tile_map_data = PackedByteArray("AAAGAAcAAQAFAAQAAAAGAAgAAQAFAAUAAAAHAAcAAQAGAAQAAAAHAAgAAQAGAAUAAAAEAAcAAQAFAAQAAAAEAAgAAQAFAAUAAAAFAAcAAQAGAAQAAAAFAAgAAQAGAAUAAAACAAcAAQAFAAQAAAACAAgAAQAFAAUAAAADAAcAAQAGAAQAAAADAAgAAQAGAAUAAAABAAEAAAADAAAAAAABAAIAAAADAAEAAAABAAMAAAADAAIAAAACAAEAAAAEAAAAAAACAAIAAAAEAAEAAAACAAMAAAAEAAIAAAAKAAAAAAAKAAUAAAAKAAEAAAAKAAYAAAAKAAIAAAAKAAcAAAALAAAAAAALAAUAAAALAAEAAAALAAYAAAALAAIAAAALAAcAAAADAAMAAAAAAAkAAAADAAQAAAAAAAoAAAADAAUAAAAAAAsAAAAEAAQAAAABAAoAAAAEAAUAAAABAAsAAAAEAAYAAAABAAwAAAAFAAQAAAACAAoAAAAFAAUAAAACAAsAAAAFAAYAAAACAAwAAAAGAAQAAAADAAoAAAAGAAUAAAADAAsAAAAGAAYAAAADAAwAAAAHAAMAAAAEAAkAAAAHAAQAAAAEAAoAAAAHAAUAAAAEAAsAAAALAAQAAAAHAAMAAAALAAUAAAAHAAMAAAALAAYAAAAHAAQAAAAMAAQAAAAIAAMAAAAMAAUAAAAIAAMAAAAMAAYAAAAIAAQAAAAMAAEAAAALAAAAAAAMAAIAAAALAAEAAAALAAMAAAAHAAIAAAAMAAMAAAAIAAIAAAAFAAMAAAACAAkAAAAIAAEAAAAHAAAAAAAIAAIAAAAHAAEAAAAJAAEAAAAIAAAAAAAJAAIAAAAIAAEAAAA=")
+tile_map_data = PackedByteArray("AAAGAAcAAQAFAAQAAAAGAAgAAQAFAAUAAAAHAAcAAQAGAAQAAAAHAAgAAQAGAAUAAAAEAAcAAQAFAAQAAAAEAAgAAQAFAAUAAAAFAAcAAQAGAAQAAAAFAAgAAQAGAAUAAAACAAcAAQAFAAQAAAACAAgAAQAFAAUAAAADAAcAAQAGAAQAAAADAAgAAQAGAAUAAAABAAEAAAADAAAAAAABAAIAAAADAAEAAAABAAMAAAADAAIAAAACAAEAAAAEAAAAAAACAAIAAAAEAAEAAAACAAMAAAAEAAIAAAAKAAAAAAAKAAUAAAAKAAEAAAAKAAYAAAAKAAIAAAAKAAcAAAALAAAAAAALAAUAAAALAAEAAAALAAYAAAALAAIAAAALAAcAAAADAAMAAAAAAAkAAAADAAQAAAAAAAoAAAADAAUAAAAAAAsAAAAEAAQAAAABAAoAAAAEAAUAAAABAAsAAAAEAAYAAAABAAwAAAAFAAQAAAACAAoAAAAFAAUAAAACAAsAAAAFAAYAAAACAAwAAAAGAAQAAAADAAoAAAAGAAUAAAADAAsAAAAGAAYAAAADAAwAAAAHAAMAAAAEAAkAAAAHAAQAAAAEAAoAAAAHAAUAAAAEAAsAAAAMAAEAAAALAAAAAAAMAAIAAAALAAEAAAAFAAMAAAACAAkAAAAIAAEAAAAHAAAAAAAIAAIAAAAHAAEAAAAJAAEAAAAIAAAAAAAJAAIAAAAIAAEAAAALAAQAAgAAAAAAAgA=")
 tile_set = SubResource("TileSet_mvo2r")
 
 [node name="HouseBound" type="StaticBody2D" parent="." unique_id=819735359]

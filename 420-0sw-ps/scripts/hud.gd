@@ -9,23 +9,18 @@ func _ready() -> void:
 	Events.capture_start.connect(capture_start)
 	Events.capture_complete.connect(capture_end)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Inventory"):
-		book.visible = !book.visible
-		if book.visible:
-			pause()
-		else:
-			resume()
+		book.visible = not book.visible
+		get_tree().paused = book.visible
 
 func pause() -> void:
 	get_tree().paused = true
-	show()
 
 func resume() -> void:
 	get_tree().paused = false
-	hide()
 
-func capture_start():
+func capture_start() -> void:
 	captureMenu.show()
 	pause()
 

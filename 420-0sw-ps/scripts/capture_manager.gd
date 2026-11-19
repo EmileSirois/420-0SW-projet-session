@@ -11,6 +11,7 @@ var insects : Array[Insect] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Events.capture_complete.connect(capture_complete)
+	Events.catalog_insects.connect(catalog)
 	fetch_insects()
 
 func fetch_insects():
@@ -28,5 +29,9 @@ func capture_complete():
 	inventory.add_item(insects.pick_random(), 1)
 	
 	var item = inventory.items[0]
-	print(item.display_name)
 	
+	
+func catalog():
+	for item in inventory.items:
+		item.collected_amount += 1
+		item.discovered = true

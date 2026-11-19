@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://hesjv01ihk5y"]
+
+[ext_resource type="Script" uid="uid://ctrelwa6mk62t" path="res://scripts/table.gd" id="1_x8522"]
+[ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="2_eotx8"]
+[ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_olh0b"]
+[ext_resource type="Texture2D" uid="uid://njda3ilaesu8" path="res://assets/Tiled_files/Interior.png" id="2_x8522"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8522"]
+shader = ExtResource("2_olh0b")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/active = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xc1ax"]
+size = Vector2(24, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrjn7"]
+size = Vector2(25, 48)
+
+[node name="Table" type="Node2D" unique_id=1400279635]
+script = ExtResource("1_x8522")
+metadata/_edit_horizontal_guides_ = [-38.0]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=236950273]
+material = SubResource("ShaderMaterial_x8522")
+position = Vector2(7, -10)
+texture = ExtResource("2_x8522")
+region_enabled = true
+region_rect = Rect2(99, 51, 28, 39)
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1712446906]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=892628827]
+position = Vector2(7, -13)
+shape = SubResource("RectangleShape2D_xc1ax")
+
+[node name="Interactable" parent="." unique_id=165595025 node_paths=PackedStringArray("visual") instance=ExtResource("2_eotx8")]
+visual = NodePath("../Sprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1908902873]
+position = Vector2(-5, -13)
+shape = SubResource("RectangleShape2D_hrjn7")

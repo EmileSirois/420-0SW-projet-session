@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c5kb05xddftom"]
+
+[ext_resource type="Texture2D" uid="uid://cfa5rd2rjn1t8" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="1_7bxev"]
+[ext_resource type="Script" uid="uid://byiy5q5ekikap" path="res://scripts/tool_tip_container.gd" id="1_qmnt6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1v1fx"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_7bxev")
+
+[node name="ToolTipContainer" type="PanelContainer" unique_id=144874858]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -11.5
+offset_right = 62.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1v1fx")
+script = ExtResource("1_qmnt6")
+
+[node name="Label" type="Label" parent="." unique_id=508516571]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.032967977, 0.032967992, 0.03296798, 1)
+text = "wdwdwedwedw"
