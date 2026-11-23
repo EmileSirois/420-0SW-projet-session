@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InsectScarab" format=3 uid="uid://c1hiltjgjsjdo"]
+
+[ext_resource type="Texture2D" uid="uid://brdncgx82nt4i" path="res://assets/items/Item_Sheet_Flora&Fauna_0.png" id="1_qqhub"]
+[ext_resource type="Script" uid="uid://b1v2apc1agjq4" path="res://scripts/insects/insect_scarab.gd" id="2_qqhub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkqxg"]
+atlas = ExtResource("1_qqhub")
+region = Rect2(96, 64, 32, 32)
+
+[resource]
+script = ExtResource("2_qqhub")
+id = &"4"
+display_name = "Scarabé"
+icon = SubResource("AtlasTexture_kkqxg")
+description_paragraph = "Cuirassé d'élytres aux reflets verts métalliques, ce robuste coléoptère arpente les sous-bois et les troncs pourris, transportant sans effort des charges bien plus lourdes que lui."

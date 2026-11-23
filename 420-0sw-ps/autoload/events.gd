@@ -17,3 +17,6 @@ signal alert_requested(text: String)
 
 @warning_ignore("unused_signal")
 signal catalog_insects
+
+@warning_ignore("unused_signal")
+signal update_catalog

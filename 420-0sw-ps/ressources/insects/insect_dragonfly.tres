@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InsectDragonfly" format=3 uid="uid://ceqntllo660u3"]
+
+[ext_resource type="Texture2D" uid="uid://brdncgx82nt4i" path="res://assets/items/Item_Sheet_Flora&Fauna_0.png" id="1_t0wo2"]
+[ext_resource type="Script" uid="uid://chjjksil0gi3k" path="res://scripts/insects/insect_dragonfly.gd" id="2_t0wo2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkqxg"]
+atlas = ExtResource("1_t0wo2")
+region = Rect2(128, 96, 32, 32)
+
+[resource]
+script = ExtResource("2_t0wo2")
+display_name = "Dragonfly"
+icon = SubResource("AtlasTexture_kkqxg")
+max_stack = 10
+description_paragraph = "Maîtresse des étangs et des cours d'eau, cette chasseuse aux ailes transparentes file à toute vitesse ou stationne en plein vol, guettant moustiques et moucherons au-dessus de l'eau calme."

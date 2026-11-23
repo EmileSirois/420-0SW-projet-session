@@ -1,7 +1,7 @@
 extends Node
 
 var inventory := Inventory.new()
-var insects : Array[Insect] = []
+@export var insects : Array[Insect] = []
 
 # TODO :
 	# Selectionner aléatoirement des arbres qui seront availlable pour la capture
@@ -35,3 +35,7 @@ func catalog():
 	for item in inventory.items:
 		item.collected_amount += 1
 		item.discovered = true
+		Events.update_catalog.emit()
+		print("Vous avez catalogué un %s | Total : %d" % [item.display_name, item.collected_amount])
+
+	inventory.empty()

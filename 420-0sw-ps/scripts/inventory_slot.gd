@@ -7,6 +7,7 @@ signal selected(index: int)
 @onready var count_label: Label = $MarginContainer/Count
 
 func set_item(item: Insect) -> void:
+	#print(item)
 	if item == null:
 		icon.texture = null
 		count_label.text = ""
