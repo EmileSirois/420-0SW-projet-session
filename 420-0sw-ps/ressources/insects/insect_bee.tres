@@ -12,5 +12,4 @@ script = ExtResource("1_6rgpp")
 id = &"3"
 display_name = "Bee"
 icon = SubResource("AtlasTexture_ddtvl")
-max_stack = 10
 description_paragraph = "Affairée de fleur en fleur dès les premières chaleurs, cette butineuse rayée de jaune et de noir transporte le pollen sur ses pattes et fait vibrer l'air d'un bourdonnement régulier."

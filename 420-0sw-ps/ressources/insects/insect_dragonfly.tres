@@ -11,5 +11,4 @@ region = Rect2(128, 96, 32, 32)
 script = ExtResource("2_t0wo2")
 display_name = "Dragonfly"
 icon = SubResource("AtlasTexture_kkqxg")
-max_stack = 10
 description_paragraph = "Maîtresse des étangs et des cours d'eau, cette chasseuse aux ailes transparentes file à toute vitesse ou stationne en plein vol, guettant moustiques et moucherons au-dessus de l'eau calme."

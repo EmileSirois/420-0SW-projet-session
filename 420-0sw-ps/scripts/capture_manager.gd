@@ -28,9 +28,6 @@ func fetch_insects():
 func capture_complete():
 	inventory.add_item(insects.pick_random(), 1)
 	
-	var item = inventory.items[0]
-	
-	
 func catalog():
 	for item in inventory.items:
 		item.collected_amount += 1

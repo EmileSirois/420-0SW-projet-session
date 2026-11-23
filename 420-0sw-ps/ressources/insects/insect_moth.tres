@@ -12,5 +12,4 @@ script = ExtResource("2_dke4o")
 id = &"1"
 display_name = "Moth"
 icon = SubResource("AtlasTexture_7r4gi")
-max_stack = 10
-description_paragraph = "Papillon de nuit (Commun)Attiré par la lueur des lampadaires et des fenêtres dès la tombée du jour, ce discret visiteur nocturne arbore des ailes poudreuses aux motifs d'écorce pour se fondre dans le décor. "
+description_paragraph = "Attiré par la lueur des lampadaires et des fenêtres dès la tombée du jour, ce discret visiteur nocturne arbore des ailes poudreuses aux motifs d'écorce pour se fondre dans le décor. "

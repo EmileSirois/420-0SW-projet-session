@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InsectMantis" format=3 uid="uid://deyfmdpx538gb"]
+
+[ext_resource type="Script" uid="uid://c2q82jp7brq3d" path="res://scripts/insects/insect_mantis.gd" id="1_8ickg"]
+[ext_resource type="Texture2D" uid="uid://brdncgx82nt4i" path="res://assets/items/Item_Sheet_Flora&Fauna_0.png" id="1_bxbgw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ickg"]
+atlas = ExtResource("1_bxbgw")
+region = Rect2(96, 96, 32, 32)
+
+[resource]
+script = ExtResource("1_8ickg")
+id = &"5"
+display_name = "Mante Religieuse"
+icon = SubResource("AtlasTexture_8ickg")
+description_paragraph = "Sentinelle silencieuse des prairies, cette chasseresse au corps élancé attend patiemment sa cible, les pattes avant jointes, prête à frapper avec une précision foudroyante."
