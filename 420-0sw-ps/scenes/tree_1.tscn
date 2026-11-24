@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btepsjnx7ikhr" path="res://scripts/tree_1.gd" id="1_b2jax"]
 [ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_pe641"]
-[ext_resource type="Texture2D" uid="uid://dksg64cdqeer0" path="res://assets/EnvironmentPack/AnimatedTrees/AnimatedClassicalTrees/AnimatedTreeCoolColor.png" id="2_uk7mw"]
+[ext_resource type="Texture2D" uid="uid://dksg64cdqeer0" path="res://assets/sprites/EnvironmentPack/AnimatedTrees/AnimatedClassicalTrees/AnimatedTreeCoolColor.png" id="2_uk7mw"]
 [ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="3_uk7mw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uk7mw"]
@@ -153,7 +153,6 @@ position = Vector2(0.5, 18.5)
 shape = SubResource("RectangleShape2D_cmc4h")
 
 [node name="Interactable" parent="." unique_id=165595025 node_paths=PackedStringArray("visual") instance=ExtResource("3_uk7mw")]
-visible = false
 visual = NodePath("../AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1135677684]

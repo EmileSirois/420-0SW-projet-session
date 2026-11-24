@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5kb05xddftom"]
 
-[ext_resource type="Texture2D" uid="uid://cfa5rd2rjn1t8" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="1_7bxev"]
+[ext_resource type="Texture2D" uid="uid://cfa5rd2rjn1t8" path="res://assets/sprites/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="1_7bxev"]
 [ext_resource type="Script" uid="uid://byiy5q5ekikap" path="res://scripts/tool_tip_container.gd" id="1_qmnt6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1v1fx"]

@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://ho8yprsfggco"]
 
+[ext_resource type="Script" uid="uid://joj53oqihflj" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://bkjm5xl0g1fan" path="res://assets/sprites/forest-background-cropped.png" id="2_ekxnf"]
+[ext_resource type="FontFile" uid="uid://eomypsfy2gsf" path="res://assets/fonts/Wooden font v1/WoodPressed.fnt" id="3_bqqt6"]
+
 [node name="MainMenu" type="Control" unique_id=2095292604]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l6cm7")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1116764421]
 layout_mode = 1
@@ -15,24 +20,59 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_ekxnf")
+expand_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1763356162]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2069164809]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -76.0
+offset_right = 150.0
+offset_bottom = 76.0
+grow_vertical = 2
+theme_override_constants/margin_left = 200
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1911292493]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=1763356162]
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1767847458]
-custom_minimum_size = Vector2(150, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer" unique_id=1911292493]
 layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=2014433663]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 84
+text = "Entomology"
+
+[node name="VSeparator" type="HSeparator" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=516663016]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1767847458]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 40)
+custom_maximum_size = Vector2(170, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=648148456]
+[node name="OptionsButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=648148456]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1530934731]
+[node name="QuitButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1530934731]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
 text = "Quit"

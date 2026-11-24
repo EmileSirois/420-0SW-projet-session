@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxxkyvpsmp1pb"]
 
-[ext_resource type="Texture2D" uid="uid://b1p56l34egqpd" path="res://assets/EnvironmentPack/AnimatedTrees/AnimatedClassicalTrees/AnimatedTrees.png" id="1_iekdm"]
+[ext_resource type="Texture2D" uid="uid://b1p56l34egqpd" path="res://assets/sprites/EnvironmentPack/AnimatedTrees/AnimatedClassicalTrees/AnimatedTrees.png" id="1_iekdm"]
 [ext_resource type="Script" uid="uid://eoiwok8tbtu4" path="res://scripts/tree_2.gd" id="1_wmt7p"]
 [ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_w7snq"]
 [ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="3_rokvb"]

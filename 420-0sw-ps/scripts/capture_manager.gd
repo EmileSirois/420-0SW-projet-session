@@ -33,6 +33,16 @@ func catalog():
 		item.collected_amount += 1
 		item.discovered = true
 		Events.update_catalog.emit()
-		print("Vous avez catalogué un %s | Total : %d" % [item.display_name, item.collected_amount])
 
 	inventory.empty()
+	verify_completion()
+
+func verify_completion():
+	var complete := true
+	
+	for i in insects:
+		if !i.discovered:
+			complete = false
+	
+	if complete:
+		print("Collection terminée!")

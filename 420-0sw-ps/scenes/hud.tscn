@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://xnyxwg5htbr" path="res://scenes/capture_menu.tscn" id="2_oo0fn"]
 [ext_resource type="PackedScene" uid="uid://8lhm28qkvluu" path="res://scenes/book.tscn" id="3_5ysmq"]
 [ext_resource type="Script" uid="uid://c60mq20mp4bdm" path="res://scripts/alert.gd" id="4_6fi6k"]
-[ext_resource type="Texture2D" uid="uid://omw42xsjfxwb" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_Alert01a.png" id="5_047uy"]
+[ext_resource type="Texture2D" uid="uid://omw42xsjfxwb" path="res://assets/sprites/01_TravelBookLite/Sprites/UI_TravelBook_Alert01a.png" id="5_047uy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysmq"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

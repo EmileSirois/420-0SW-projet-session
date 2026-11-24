@@ -1,10 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://dbq2wxs5lys6n"]
 
-[ext_resource type="Texture2D" uid="uid://bwl655yum0tnn" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01a.png" id="1_tmi4j"]
-[ext_resource type="Texture2D" uid="uid://yktyl2hx1dyn" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01b.png" id="2_d6hdt"]
-[ext_resource type="Texture2D" uid="uid://cxhlmeoomn3uj" path="res://assets/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="3_d6hdt"]
-[ext_resource type="Texture2D" uid="uid://b52oojr2dhtr3" path="res://assets/01_TravelBookLite/Sprites Animated/UI_TravelBook_Marker01aShow_4.png" id="4_e5pf3"]
-[ext_resource type="Texture2D" uid="uid://0cliwt6o22wx" path="res://assets/01_TravelBookLite/Sprites Animated/UI_TravelBook_Marker01aShow_2.png" id="5_8ordt"]
+[ext_resource type="Texture2D" uid="uid://bwl655yum0tnn" path="res://assets/sprites/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01a.png" id="1_tmi4j"]
+[ext_resource type="Texture2D" uid="uid://yktyl2hx1dyn" path="res://assets/sprites/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01b.png" id="2_d6hdt"]
+[ext_resource type="Texture2D" uid="uid://cxhlmeoomn3uj" path="res://assets/sprites/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="3_d6hdt"]
+[ext_resource type="Texture2D" uid="uid://b52oojr2dhtr3" path="res://assets/sprites/01_TravelBookLite/Sprites Animated/UI_TravelBook_Marker01aShow_4.png" id="4_e5pf3"]
+[ext_resource type="Texture2D" uid="uid://0cliwt6o22wx" path="res://assets/sprites/01_TravelBookLite/Sprites Animated/UI_TravelBook_Marker01aShow_2.png" id="5_8ordt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6hdt"]
 content_margin_left = 10.0

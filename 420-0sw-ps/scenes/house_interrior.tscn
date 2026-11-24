@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://da2mcg46in7x4"]
 
 [ext_resource type="Script" uid="uid://bs40phe2ovqdt" path="res://scripts/house_interrior.gd" id="1_b0dfw"]
-[ext_resource type="Texture2D" uid="uid://b5dj7x85qyac8" path="res://assets/PNG/Interior.png" id="1_t23dk"]
+[ext_resource type="Texture2D" uid="uid://b5dj7x85qyac8" path="res://assets/sprites/PNG/Interior.png" id="1_t23dk"]
 [ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_040vw"]
-[ext_resource type="Texture2D" uid="uid://be08nror5251r" path="res://assets/PNG/walls_floor.png" id="2_qluia"]
+[ext_resource type="Texture2D" uid="uid://be08nror5251r" path="res://assets/sprites/PNG/walls_floor.png" id="2_qluia"]
 [ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="4_b0dfw"]
 [ext_resource type="PackedScene" uid="uid://hesjv01ihk5y" path="res://scenes/table.tscn" id="5_gn2dq"]
 
