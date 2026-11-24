@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b52oojr2dhtr3" path="res://assets/sprites/01_TravelBookLite/Sprites Animated/UI_TravelBook_Marker01aShow_4.png" id="4_st3ap"]
 [ext_resource type="Texture2D" uid="uid://0cliwt6o22wx" path="res://assets/sprites/01_TravelBookLite/Sprites Animated/UI_TravelBook_Marker01aShow_2.png" id="5_6eu8d"]
 [ext_resource type="Script" uid="uid://cx4cwlkx0hrx8" path="res://scripts/inventory_slot.gd" id="6_s2hqy"]
+[ext_resource type="Texture2D" uid="uid://bjauc22aan51y" path="res://assets/sprites/01_TravelBookLite/Sprites Animated/UI_TravelBook_SlotCursor01a_2.png" id="7_t1mo2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6hdt"]
 content_margin_left = 10.0
@@ -58,6 +59,9 @@ TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_ble1a")
 TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_3wpgy")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_4vsvs")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t1mo2"]
+texture = ExtResource("7_t1mo2")
+
 [node name="InventorySlot" type="PanelContainer" unique_id=1921058801]
 theme = SubResource("Theme_68j0h")
 script = ExtResource("6_s2hqy")
@@ -80,3 +84,10 @@ z_index = 2
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 5
+
+[node name="Highlight" type="Panel" parent="." unique_id=1179048546]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_t1mo2")

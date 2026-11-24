@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dnhfs8agsv51"]
+
+[ext_resource type="Script" uid="uid://buv1p1as528ed" path="res://scripts/game_end.gd" id="1_71rs3"]
+
+[node name="GameEnd" type="Control" unique_id=351980248]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_71rs3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1431533574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2013666139]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=1861801348]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "YOU DIED"
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=500237287]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer2" unique_id=1192119565]
+layout_mode = 2
+theme_override_constants/margin_bottom = 26
+
+[node name="Label" type="Label" parent="CenterContainer2/MarginContainer" unique_id=344660873]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "PRESS ENTER TO RESTART"

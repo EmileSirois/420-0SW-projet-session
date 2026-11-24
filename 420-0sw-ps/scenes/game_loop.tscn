@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dux6fqj73h2ql" path="res://scripts/scene_manager.gd" id="3_43akg"]
 [ext_resource type="PackedScene" uid="uid://da2mcg46in7x4" path="res://scenes/house_interrior.tscn" id="4_g34oh"]
 [ext_resource type="PackedScene" uid="uid://ue8xq5iegs3p" path="res://scenes/hud.tscn" id="5_17ir4"]
+[ext_resource type="PackedScene" uid="uid://c3tpseaql8id0" path="res://scenes/pause_menu.tscn" id="6_85pk6"]
 
 [node name="game_loop" type="Node2D" unique_id=1177750953]
 y_sort_enabled = true
@@ -24,3 +25,6 @@ y_sort_enabled = true
 script = ExtResource("3_43akg")
 houseScene = ExtResource("4_g34oh")
 worldScene = ExtResource("1_qco2a")
+
+[node name="PauseMenu" parent="." unique_id=230620581 instance=ExtResource("6_85pk6")]
+visible = false

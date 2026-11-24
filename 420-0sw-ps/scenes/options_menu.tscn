@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://66gah2ikofkn"]
+
+[ext_resource type="Script" uid="uid://cf6xlqef1mavs" path="res://scripts/options_menu.gd" id="1_liyum"]
+
+[node name="OptionsMenu" type="Control" unique_id=1629779572]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_liyum")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1569088111]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1136823618]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2005288666]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Options"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1174567922]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VolumeLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=223561723]
+layout_mode = 2
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=1059216938]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=358991084]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"

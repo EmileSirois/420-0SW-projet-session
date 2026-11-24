@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://joj53oqihflj" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://bkjm5xl0g1fan" path="res://assets/sprites/forest-background-cropped.png" id="2_ekxnf"]
 [ext_resource type="FontFile" uid="uid://eomypsfy2gsf" path="res://assets/fonts/Wooden font v1/WoodPressed.fnt" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://66gah2ikofkn" path="res://scenes/options_menu.tscn" id="4_wu84c"]
 
 [node name="MainMenu" type="Control" unique_id=2095292604]
 layout_mode = 3
@@ -54,7 +55,7 @@ theme_override_constants/separation = 20
 
 [node name="StartButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1767847458]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(170, 40)
+custom_minimum_size = Vector2(200, 40)
 custom_maximum_size = Vector2(170, -1)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -76,3 +77,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 text = "Quit"
+
+[node name="OptionsMenu" parent="." unique_id=1629779572 instance=ExtResource("4_wu84c")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
