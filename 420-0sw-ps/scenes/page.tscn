@@ -28,7 +28,7 @@ script = ExtResource("1_kkqxg")
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=292036246]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 8
 
 [node name="Name" type="Label" parent="VBoxContainer" unique_id=1068701965]
 unique_name_in_owner = true
@@ -74,3 +74,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.56646466, 0.29067275, 0.32093462, 1)
 disabled = true
 text = "   Découvert "
+
+[node name="AmountText" type="Label" parent="VBoxContainer" unique_id=421451849]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5647059, 0.2901961, 0.32156864, 1)

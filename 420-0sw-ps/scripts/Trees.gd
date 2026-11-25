@@ -1,7 +1,7 @@
 extends Node
 class_name Trees
 
-@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite : AnimatedSprite2D = $TreeSprite
 var captureNode : bool = false
 
 func randomize_frames():

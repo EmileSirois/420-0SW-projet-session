@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b2vscbqh4y5k4" path="res://scripts/tree_3.gd" id="1_t3ebc"]
 [ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_27jge"]
 [ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="3_tmiux"]
+[ext_resource type="Texture2D" uid="uid://bd73edonv150s" path="res://assets/sprites/interact_sparkle.png" id="4_0b1i4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0b1i4"]
 shader = ExtResource("2_27jge")
@@ -131,6 +132,56 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e0uo"]
+atlas = ExtResource("4_0b1i4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21iec"]
+atlas = ExtResource("4_0b1i4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajs4o"]
+atlas = ExtResource("4_0b1i4")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ala3q"]
+atlas = ExtResource("4_0b1i4")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d86nu"]
+atlas = ExtResource("4_0b1i4")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fpst"]
+atlas = ExtResource("4_0b1i4")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1sfm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e0uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21iec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajs4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ala3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d86nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fpst")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_035b0"]
 size = Vector2(11, 19)
 
@@ -140,10 +191,15 @@ radius = 25.0
 [node name="Tree3" type="Node2D" unique_id=947793273]
 script = ExtResource("1_t3ebc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1633257370]
+[node name="TreeSprite" type="AnimatedSprite2D" parent="." unique_id=1633257370]
 material = SubResource("ShaderMaterial_0b1i4")
 sprite_frames = SubResource("SpriteFrames_6kxon")
 autoplay = "default"
+
+[node name="Sparkle" type="AnimatedSprite2D" parent="." unique_id=1209387737]
+position = Vector2(0, 17)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_n1sfm")
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=1395427197]
 
@@ -152,7 +208,7 @@ position = Vector2(0.5, 20.5)
 shape = SubResource("RectangleShape2D_035b0")
 
 [node name="Interactable" parent="." unique_id=165595025 node_paths=PackedStringArray("visual") instance=ExtResource("3_tmiux")]
-visual = NodePath("../AnimatedSprite2D")
+visual = NodePath("../TreeSprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1370114853]
 position = Vector2(0, 21)

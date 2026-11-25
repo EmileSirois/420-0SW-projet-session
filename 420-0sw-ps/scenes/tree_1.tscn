@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://e47mxjxuin7w" path="res://shaders/outline.gdshader" id="2_pe641"]
 [ext_resource type="Texture2D" uid="uid://dksg64cdqeer0" path="res://assets/sprites/EnvironmentPack/AnimatedTrees/AnimatedClassicalTrees/AnimatedTreeCoolColor.png" id="2_uk7mw"]
 [ext_resource type="PackedScene" uid="uid://b3pfxj55adkmk" path="res://scenes/interactable.tscn" id="3_uk7mw"]
+[ext_resource type="Texture2D" uid="uid://bd73edonv150s" path="res://assets/sprites/interact_sparkle.png" id="4_1du6c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uk7mw"]
 shader = ExtResource("2_pe641")
@@ -131,6 +132,56 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e0uo"]
+atlas = ExtResource("4_1du6c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21iec"]
+atlas = ExtResource("4_1du6c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajs4o"]
+atlas = ExtResource("4_1du6c")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ala3q"]
+atlas = ExtResource("4_1du6c")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d86nu"]
+atlas = ExtResource("4_1du6c")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fpst"]
+atlas = ExtResource("4_1du6c")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pe641"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e0uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21iec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajs4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ala3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d86nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fpst")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmc4h"]
 size = Vector2(11, 23)
 
@@ -140,20 +191,28 @@ radius = 25.0
 [node name="Tree1" type="Node2D" unique_id=300792247]
 script = ExtResource("1_b2jax")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1238131118]
+[node name="TreeSprite" type="AnimatedSprite2D" parent="." unique_id=1238131118]
 material = SubResource("ShaderMaterial_uk7mw")
 sprite_frames = SubResource("SpriteFrames_u3q50")
 autoplay = "default"
 frame_progress = 0.015536105
 
+[node name="Sparkle" type="AnimatedSprite2D" parent="." unique_id=1054433765]
+position = Vector2(0, 17)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_pe641")
+frame_progress = 0.52145946
+
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=2024694834]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1659727978]
 position = Vector2(0.5, 18.5)
 shape = SubResource("RectangleShape2D_cmc4h")
 
 [node name="Interactable" parent="." unique_id=165595025 node_paths=PackedStringArray("visual") instance=ExtResource("3_uk7mw")]
-visual = NodePath("../AnimatedSprite2D")
+visible = false
+visual = NodePath("../TreeSprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1135677684]
 position = Vector2(0, 21)

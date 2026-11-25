@@ -7,6 +7,7 @@ var item : Insect
 @onready var title := %Name
 @onready var desc := %Description
 @onready var discovered_check := %DiscoveredCheck
+@onready var amount_text := %AmountText
 
 func set_item(i: Insect) -> void:
 	item = i
@@ -15,6 +16,7 @@ func set_item(i: Insect) -> void:
 	desc.text = i.description_paragraph
 	
 	if item.discovered:
+		amount_text.text = "Quantité capturée :  %s" % i.collected_amount
 		discovered_check.button_pressed = true
 		icon.material = null
 		

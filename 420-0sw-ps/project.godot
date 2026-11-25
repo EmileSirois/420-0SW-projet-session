@@ -25,6 +25,10 @@ CaptureManager="*uid://c11a2p0b40lm1"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+trees=""
+
 [input]
 
 Right={

@@ -1,6 +1,9 @@
 extends Node
 
 var inventory := Inventory.new()
+var tree_array : Array
+var game_loop: GameLoop
+
 @export var insects : Array[Insect] = []
 
 # TODO :
@@ -46,3 +49,12 @@ func verify_completion():
 	
 	if complete:
 		print("Collection terminée!")
+
+func select_trees():
+	tree_array = get_tree().get_nodes_in_group("trees")
+	#for t in tree_array:
+		#t.capturable = true
+	var pondTrees := game_loop.pondInterractables.map(func(i): return i.get_parent() if i is Interactable else null)
+	for t in pondTrees:
+		t.capturable = true
+		
